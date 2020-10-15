@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>2.2.0</Version>
+    <AssemblyVersion>2.2.0.0</AssemblyVersion>
+    <FileVersion>2.2.0.0</FileVersion>
+    <Authors>James Randall</Authors>
+    <Company>James Randall</Company>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/JamesRandall/AzureFromTheTrenches.Commanding/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://functionmonkey.azurefromthetrenches.com/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/JamesRandall/FunctionMonkey.git</RepositoryUrl>
+    <PackageVersion>$(CommonPackageVersion)</PackageVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AzureFromTheTrenches.Commanding.Abstractions" Version="9.0.2" />
+    <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="2.9.2" />
+  </ItemGroup>
+
+</Project>

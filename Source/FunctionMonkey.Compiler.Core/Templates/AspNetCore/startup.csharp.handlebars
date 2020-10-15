@@ -1,0 +1,89 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using AzureFromTheTrenches.Commanding;
+using AzureFromTheTrenches.Commanding.Abstractions;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using FunctionMonkey.AspNetCore;
+using Microsoft.Extensions.Configuration;
+
+namespace {{{Namespace}}}
+{
+    public class Startup
+    {
+        private IServiceProvider _serviceProvider;
+        
+        // This method gets called by the runtime. Use this method to add services to the container.
+        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        public void ConfigureServices(IServiceCollection services)
+        {
+            {{Namespace}}.ReferenceLinkBack.ForceLinkBack();
+            FunctionMonkey.Runtime.InitializeFromStartup(services);
+
+            services
+                .AddControllers()
+                // Remove this when we've figured out how to ignore properties with System.Text.Json. Only two options I have are:
+                //   1. At the start of each action set any securityproperties to their default value overriding what the serializer did
+                //   2. Generate a custom serializer for each model type.
+                .AddNewtonsoftJson(options =>
+                {
+                    // Because the binding model metadata is ignored on bodyies we have to customize the
+                    // serializer and instruct it to ignore the SecurityProperty marked attributes
+                    options.SerializerSettings.ContractResolver = new JsonSecurityPropertyContractResolver();
+                });
+            ;
+
+            {{#if UsesTokenValidation}}
+            services
+                .AddAuthentication(x =>
+                    {
+                        x.DefaultAuthenticateScheme = TokenValidationDefaults.AuthenticationScheme;
+                        x.DefaultChallengeScheme = TokenValidationDefaults.AuthenticationScheme;
+                    }
+                )
+                .AddTokenValidation();
+            services.AddAuthorization();
+            {{/if}}
+    
+            {{#if OpenApiEnabled}}
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "{{{OpenApiTitle}}}", Version = "{{{OpenApiVersion}}}" });
+            });
+            {{/if}}
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IConfiguration configuration)
+        {
+            {{#if SetEnvironmentVariables}}
+            var values = configuration.GetSection("Values")?.GetChildren();
+            if (values != null)
+            {
+                foreach (var value in values)
+                {
+                    Environment.SetEnvironmentVariable(value.Key, value.Value);
+                }
+            }
+            {{/if}}
+            _serviceProvider = app.ApplicationServices;
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseRouting();
+            {{#if UsesTokenValidation}}
+            app.UseAuthentication();
+            app.UseAuthorization();
+            {{/if}}
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+        }
+    }
+}

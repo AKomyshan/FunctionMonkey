@@ -1,0 +1,246 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>    
+    <Version>2.4.0-beta000</Version>
+    <AssemblyName>FunctionMonkey.Compiler</AssemblyName>
+    <PackageId>FunctionMonkey.Compiler</PackageId>
+    <PackageVersion>$(CommonPackageVersion)</PackageVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="node_modules\swagger-ui-dist\absolute-path.js" />
+    <None Remove="node_modules\swagger-ui-dist\favicon-16x16.png" />
+    <None Remove="node_modules\swagger-ui-dist\favicon-32x32.png" />
+    <None Remove="node_modules\swagger-ui-dist\index.html" />
+    <None Remove="node_modules\swagger-ui-dist\index.js" />
+    <None Remove="node_modules\swagger-ui-dist\oauth2-redirect.html" />
+    <None Remove="node_modules\swagger-ui-dist\package.json" />
+    <None Remove="node_modules\swagger-ui-dist\README.md" />
+    <None Remove="node_modules\swagger-ui-dist\swagger-ui-bundle.dodge.js" />
+    <None Remove="node_modules\swagger-ui-dist\swagger-ui-bundle.dodge.js.map" />
+    <None Remove="node_modules\swagger-ui-dist\swagger-ui-bundle.js" />
+    <None Remove="node_modules\swagger-ui-dist\swagger-ui-bundle.js.map" />
+    <None Remove="node_modules\swagger-ui-dist\swagger-ui-standalone-preset.dodge.js" />
+    <None Remove="node_modules\swagger-ui-dist\swagger-ui-standalone-preset.dodge.js.map" />
+    <None Remove="node_modules\swagger-ui-dist\swagger-ui-standalone-preset.js" />
+    <None Remove="node_modules\swagger-ui-dist\swagger-ui-standalone-preset.js.map" />
+    <None Remove="node_modules\swagger-ui-dist\swagger-ui.css" />
+    <None Remove="node_modules\swagger-ui-dist\swagger-ui.css.map" />
+    <None Remove="node_modules\swagger-ui-dist\swagger-ui.js" />
+    <None Remove="node_modules\swagger-ui-dist\swagger-ui.js.map" />
+    <None Remove="references\netstandard2.0\Microsoft.Win32.Primitives.dll" />
+    <None Remove="references\netstandard2.0\mscorlib.dll" />
+    <None Remove="references\netstandard2.0\netstandard.dll" />
+    <None Remove="references\netstandard2.0\System.AppContext.dll" />
+    <None Remove="references\netstandard2.0\System.Collections.Concurrent.dll" />
+    <None Remove="references\netstandard2.0\System.Collections.dll" />
+    <None Remove="references\netstandard2.0\System.Collections.NonGeneric.dll" />
+    <None Remove="references\netstandard2.0\System.Collections.Specialized.dll" />
+    <None Remove="references\netstandard2.0\System.ComponentModel.Composition.dll" />
+    <None Remove="references\netstandard2.0\System.ComponentModel.dll" />
+    <None Remove="references\netstandard2.0\System.ComponentModel.EventBasedAsync.dll" />
+    <None Remove="references\netstandard2.0\System.ComponentModel.Primitives.dll" />
+    <None Remove="references\netstandard2.0\System.ComponentModel.TypeConverter.dll" />
+    <None Remove="references\netstandard2.0\System.Console.dll" />
+    <None Remove="references\netstandard2.0\System.Core.dll" />
+    <None Remove="references\netstandard2.0\System.Data.Common.dll" />
+    <None Remove="references\netstandard2.0\System.Data.dll" />
+    <None Remove="references\netstandard2.0\System.Diagnostics.Contracts.dll" />
+    <None Remove="references\netstandard2.0\System.Diagnostics.Debug.dll" />
+    <None Remove="references\netstandard2.0\System.Diagnostics.FileVersionInfo.dll" />
+    <None Remove="references\netstandard2.0\System.Diagnostics.Process.dll" />
+    <None Remove="references\netstandard2.0\System.Diagnostics.StackTrace.dll" />
+    <None Remove="references\netstandard2.0\System.Diagnostics.TextWriterTraceListener.dll" />
+    <None Remove="references\netstandard2.0\System.Diagnostics.Tools.dll" />
+    <None Remove="references\netstandard2.0\System.Diagnostics.TraceSource.dll" />
+    <None Remove="references\netstandard2.0\System.Diagnostics.Tracing.dll" />
+    <None Remove="references\netstandard2.0\System.dll" />
+    <None Remove="references\netstandard2.0\System.Drawing.dll" />
+    <None Remove="references\netstandard2.0\System.Drawing.Primitives.dll" />
+    <None Remove="references\netstandard2.0\System.Dynamic.Runtime.dll" />
+    <None Remove="references\netstandard2.0\System.Globalization.Calendars.dll" />
+    <None Remove="references\netstandard2.0\System.Globalization.dll" />
+    <None Remove="references\netstandard2.0\System.Globalization.Extensions.dll" />
+    <None Remove="references\netstandard2.0\System.IO.Compression.dll" />
+    <None Remove="references\netstandard2.0\System.IO.Compression.FileSystem.dll" />
+    <None Remove="references\netstandard2.0\System.IO.Compression.ZipFile.dll" />
+    <None Remove="references\netstandard2.0\System.IO.dll" />
+    <None Remove="references\netstandard2.0\System.IO.FileSystem.dll" />
+    <None Remove="references\netstandard2.0\System.IO.FileSystem.DriveInfo.dll" />
+    <None Remove="references\netstandard2.0\System.IO.FileSystem.Primitives.dll" />
+    <None Remove="references\netstandard2.0\System.IO.FileSystem.Watcher.dll" />
+    <None Remove="references\netstandard2.0\System.IO.IsolatedStorage.dll" />
+    <None Remove="references\netstandard2.0\System.IO.MemoryMappedFiles.dll" />
+    <None Remove="references\netstandard2.0\System.IO.Pipes.dll" />
+    <None Remove="references\netstandard2.0\System.IO.UnmanagedMemoryStream.dll" />
+    <None Remove="references\netstandard2.0\System.Linq.dll" />
+    <None Remove="references\netstandard2.0\System.Linq.Expressions.dll" />
+    <None Remove="references\netstandard2.0\System.Linq.Parallel.dll" />
+    <None Remove="references\netstandard2.0\System.Linq.Queryable.dll" />
+    <None Remove="references\netstandard2.0\System.Net.dll" />
+    <None Remove="references\netstandard2.0\System.Net.Http.dll" />
+    <None Remove="references\netstandard2.0\System.Net.NameResolution.dll" />
+    <None Remove="references\netstandard2.0\System.Net.NetworkInformation.dll" />
+    <None Remove="references\netstandard2.0\System.Net.Ping.dll" />
+    <None Remove="references\netstandard2.0\System.Net.Primitives.dll" />
+    <None Remove="references\netstandard2.0\System.Net.Requests.dll" />
+    <None Remove="references\netstandard2.0\System.Net.Security.dll" />
+    <None Remove="references\netstandard2.0\System.Net.Sockets.dll" />
+    <None Remove="references\netstandard2.0\System.Net.WebHeaderCollection.dll" />
+    <None Remove="references\netstandard2.0\System.Net.WebSockets.Client.dll" />
+    <None Remove="references\netstandard2.0\System.Net.WebSockets.dll" />
+    <None Remove="references\netstandard2.0\System.Numerics.dll" />
+    <None Remove="references\netstandard2.0\System.ObjectModel.dll" />
+    <None Remove="references\netstandard2.0\System.Reflection.dll" />
+    <None Remove="references\netstandard2.0\System.Reflection.Extensions.dll" />
+    <None Remove="references\netstandard2.0\System.Reflection.Primitives.dll" />
+    <None Remove="references\netstandard2.0\System.Resources.Reader.dll" />
+    <None Remove="references\netstandard2.0\System.Resources.ResourceManager.dll" />
+    <None Remove="references\netstandard2.0\System.Resources.Writer.dll" />
+    <None Remove="references\netstandard2.0\System.Runtime.CompilerServices.VisualC.dll" />
+    <None Remove="references\netstandard2.0\System.Runtime.dll" />
+    <None Remove="references\netstandard2.0\System.Runtime.Extensions.dll" />
+    <None Remove="references\netstandard2.0\System.Runtime.Handles.dll" />
+    <None Remove="references\netstandard2.0\System.Runtime.InteropServices.dll" />
+    <None Remove="references\netstandard2.0\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <None Remove="references\netstandard2.0\System.Runtime.Numerics.dll" />
+    <None Remove="references\netstandard2.0\System.Runtime.Serialization.dll" />
+    <None Remove="references\netstandard2.0\System.Runtime.Serialization.Formatters.dll" />
+    <None Remove="references\netstandard2.0\System.Runtime.Serialization.Json.dll" />
+    <None Remove="references\netstandard2.0\System.Runtime.Serialization.Primitives.dll" />
+    <None Remove="references\netstandard2.0\System.Runtime.Serialization.Xml.dll" />
+    <None Remove="references\netstandard2.0\System.Security.Claims.dll" />
+    <None Remove="references\netstandard2.0\System.Security.Cryptography.Algorithms.dll" />
+    <None Remove="references\netstandard2.0\System.Security.Cryptography.Csp.dll" />
+    <None Remove="references\netstandard2.0\System.Security.Cryptography.Encoding.dll" />
+    <None Remove="references\netstandard2.0\System.Security.Cryptography.Primitives.dll" />
+    <None Remove="references\netstandard2.0\System.Security.Cryptography.X509Certificates.dll" />
+    <None Remove="references\netstandard2.0\System.Security.Principal.dll" />
+    <None Remove="references\netstandard2.0\System.Security.SecureString.dll" />
+    <None Remove="references\netstandard2.0\System.ServiceModel.Web.dll" />
+    <None Remove="references\netstandard2.0\System.Text.Encoding.dll" />
+    <None Remove="references\netstandard2.0\System.Text.Encoding.Extensions.dll" />
+    <None Remove="references\netstandard2.0\System.Text.RegularExpressions.dll" />
+    <None Remove="references\netstandard2.0\System.Threading.dll" />
+    <None Remove="references\netstandard2.0\System.Threading.Overlapped.dll" />
+    <None Remove="references\netstandard2.0\System.Threading.Tasks.dll" />
+    <None Remove="references\netstandard2.0\System.Threading.Tasks.Parallel.dll" />
+    <None Remove="references\netstandard2.0\System.Threading.Thread.dll" />
+    <None Remove="references\netstandard2.0\System.Threading.ThreadPool.dll" />
+    <None Remove="references\netstandard2.0\System.Threading.Timer.dll" />
+    <None Remove="references\netstandard2.0\System.Transactions.dll" />
+    <None Remove="references\netstandard2.0\System.ValueTuple.dll" />
+    <None Remove="references\netstandard2.0\System.Web.dll" />
+    <None Remove="references\netstandard2.0\System.Windows.dll" />
+    <None Remove="references\netstandard2.0\System.Xml.dll" />
+    <None Remove="references\netstandard2.0\System.Xml.Linq.dll" />
+    <None Remove="references\netstandard2.0\System.Xml.ReaderWriter.dll" />
+    <None Remove="references\netstandard2.0\System.Xml.Serialization.dll" />
+    <None Remove="references\netstandard2.0\System.Xml.XDocument.dll" />
+    <None Remove="references\netstandard2.0\System.Xml.XmlDocument.dll" />
+    <None Remove="references\netstandard2.0\System.Xml.XmlSerializer.dll" />
+    <None Remove="references\netstandard2.0\System.Xml.XPath.dll" />
+    <None Remove="references\netstandard2.0\System.Xml.XPath.XDocument.dll" />
+    <None Remove="Templates\cosmosdb.csharp.handlebars" />
+    <None Remove="Templates\cosmosdb.json.handlebars" />
+    <None Remove="Templates\cosmosdb.outputparameter.csharp.handlebars" />
+    <None Remove="Templates\cosmosdbMonitor.json.handlebars" />
+    <None Remove="Templates\default.outputcollector.csharp.handlebars" />
+    <None Remove="Templates\eventhubqueue.csharp.handlebars" />
+    <None Remove="Templates\eventhubqueue.json.handlebars" />
+    <None Remove="Templates\extensions.json.handlebars" />
+    <None Remove="Templates\forcereference.csharp.handlebars" />
+    <None Remove="Templates\http.csharp.handlebars" />
+    <None Remove="Templates\servicebusqueue.csharp.handlebars" />
+    <None Remove="Templates\servicebusqueue.json.handlebars" />
+    <None Remove="Templates\servicebusqueue.output.json.handlebars" />
+    <None Remove="Templates\servicebussubscription.csharp.handlebars" />
+    <None Remove="Templates\servicebussubscription.json.handlebars" />
+    <None Remove="Templates\servicebustopic.output.json.handlebars" />
+    <None Remove="Templates\servicebustopic.outputparameter.csharp.handlebars" />
+    <None Remove="Templates\signalr.outputcollector.csharp.handlebars" />
+    <None Remove="Templates\signalr.outputparameter.csharp.handlebars" />
+    <None Remove="Templates\signalrbindingexpressionnegotiate.csharp.handlebars" />
+    <None Remove="Templates\signalrbindingexpressionnegotiate.json.handlebars" />
+    <None Remove="Templates\signalrcommandnegotiate.csharp.handlebars" />
+    <None Remove="Templates\signalrcommandnegotiate.json.handlebars" />
+    <None Remove="Templates\startup.csharp.handlebars" />
+    <None Remove="Templates\storageblob.csharp.handlebars" />
+    <None Remove="Templates\storageblob.json.handlebars" />
+    <None Remove="Templates\storageblobstream.csharp.handlebars" />
+    <None Remove="Templates\storageblobstream.json.handlebars" />
+    <None Remove="Templates\storagequeue.csharp.handlebars" />
+    <None Remove="Templates\storagequeue.json.handlebars" />
+    <None Remove="Templates\storagequeue.outputparameter.csharp.handlebars" />
+    <None Remove="Templates\storagetable.outputparameter.csharp.handlebars" />
+    <None Remove="Templates\swaggerui.csharp.handlebars" />
+    <None Remove="Templates\swaggerui.json.handlebars" />
+    <None Remove="Templates\timer.csharp.handlebars" />
+    <None Remove="Templates\timer.json.handlebars" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AzureFromTheTrenches.Commanding" Version="9.0.1" />
+    <PackageReference Include="AzureFromTheTrenches.Commanding.Abstractions" Version="9.0.2" />
+    <PackageReference Include="FSharp.Core" Version="4.7.0" />
+    <PackageReference Include="FluentValidation" Version="8.5.0" />
+    <PackageReference Include="Handlebars.Net" Version="1.10.1" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions" Version="3.0.5" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.CosmosDB" Version="3.0.5" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.EventHubs" Version="4.1.0" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Http" Version="3.0.2" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.ServiceBus" Version="4.0.0" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.SignalRService" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="3.0.10" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="3.4.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="5.6.0" />
+    <PackageReference Include="Microsoft.OpenApi" Version="1.1.4" />
+    <PackageReference Include="NETStandard.Library" Version="2.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FunctionMonkey.Commanding.Abstractions\FunctionMonkey.Commanding.Abstractions.csproj" />
+    <ProjectReference Include="..\FunctionMonkey.Compiler.Core\FunctionMonkey.Compiler.Core.csproj" />
+    <ProjectReference Include="..\FunctionMonkey.Compiler.MSBuild\FunctionMonkey.Compiler.MSBuild.csproj" />
+    <ProjectReference Include="..\FunctionMonkey.SignalR\FunctionMonkey.SignalR.csproj" />
+    <ProjectReference Include="..\FunctionMonkey\FunctionMonkey.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="FunctionMonkey.Compiler.targets">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="_._">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!-- Pack settings -->
+  <PropertyGroup>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+    <NuspecFile>FunctionMonkey.Compiler.nuspec</NuspecFile>
+    <IntermediatePackDir>$(MSBuildProjectDirectory)/bin/$(Configuration)/publish/</IntermediatePackDir>
+    <PublishDir>$(IntermediatePackDir)$(TargetFramework)/</PublishDir>
+    <NuspecProperties>publishDir=$([MSBuild]::NormalizeDirectory($(IntermediatePackDir)))</NuspecProperties>
+    <AssemblyVersion>2.3.0.0</AssemblyVersion>
+    <FileVersion>2.3.0.0</FileVersion>
+    <PackageReleaseNotes></PackageReleaseNotes>
+  </PropertyGroup>
+
+  <!-- Executes /t:Publish for all target frameworks before packing-->
+  <Target Name="PublishAll" BeforeTargets="GenerateNuspec">
+    <ItemGroup>
+      <_TargetFramework Include="$(TargetFramework)" />
+    </ItemGroup>
+    <MSBuild Projects="$(MSBuildProjectFullPath)" Targets="Publish" Properties="TargetFramework=%(_TargetFramework.Identity)" />
+  </Target>
+
+</Project>

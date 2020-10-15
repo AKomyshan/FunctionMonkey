@@ -1,0 +1,87 @@
+- name: Overview
+  items:
+    - name: Introduction
+      href: introduction.md
+    - name: Getting Started
+      href: gettingStarted.md
+#    - name: Packages
+#      href: packages.md
+    - name: Philosophy
+      href: philosophy.md
+    - name: FAQ
+      href: ../faq.md
+    - name: Upgrading to 1.0
+      href: upgradingTo1.0.md
+- name: Triggers
+  items:
+    - name: HTTP Triggers
+      items:
+        - name: Overview
+          href: http/overview.md
+        - name: Routing
+          href: http/routing.md
+        - name: Responses
+          href: http/responses.md
+        - name: Authorization
+          href: http/authorization.md
+        - name: Claims Mapping
+          href: http/claimsmapping.md
+        - name: Headers
+          href: http/headers.md
+        - name: Swagger / OpenAPI
+          href: http/swagger.md
+    - name: Service Bus Triggers
+      items:
+        - name: Queues
+          href: serviceBus/queues.md
+        - name: Topic and Subscriptions
+          href: serviceBus/topics.md
+        - name: Message Properties
+          href: serviceBus/messageProperties.md
+        - name: Message Sessions
+          href: serviceBus/sessionId.md
+    - name: Cosmos DB
+      items:
+        - name: Overview
+          href: cosmos/changeFeed.md
+        - name: Error Handling
+          href: cosmos/errorHandling.md
+    - name: SignalR
+      href: signalR/overview.md
+    - name: Timer Triggers
+      href: timers/timers.md      
+    - name: Azure Storage Triggers
+      items:
+        - name: Queues
+          href: storage/queues.md
+        - name: Blobs
+          href: storage/blobs.md
+    - name: Event Hub Triggers
+      href: eventhubs/eventhubs.md
+
+- name: Output Bindings
+  href: outputBindings/overview.md
+
+- name: Cross Cutting Concerns
+  items:
+    - name: Connection Strings
+      href: crosscutting/connectionStrings.md
+    - name: IoC Containers
+      href: crosscutting/iocContainers.md
+    - name: Logging
+      href: crosscutting/logging.md
+    - name: Trigger Contexts
+      href: crosscutting/triggercontexts.md
+    - name: Validation
+      href: crosscutting/validation.md
+    - name: Serialization
+      href: crosscutting/serialization.md
+    - name: Suggested Solution Structure
+      href: crosscutting/solutionstructure.md
+
+- name: Contributing
+  items:
+    - name: Compiling
+      href: contributing/compiling.md
+    - name: Debugging
+      href: contributing/debugging.md
